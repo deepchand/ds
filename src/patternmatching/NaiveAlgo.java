@@ -1,4 +1,4 @@
-package pattern.matching;
+package patternmatching;
 
 public class NaiveAlgo {
 

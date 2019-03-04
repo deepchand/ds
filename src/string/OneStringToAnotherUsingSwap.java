@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class OneStringToAnotherUsingSwap {
 	public static void main(String args[]) throws Exception {
 		// Scanner
+		@SuppressWarnings("resource")
 		Scanner s = new Scanner(System.in);
-		int n = s.nextInt();
 		String str1 = s.next(); // Reading input from STDIN
 		String str2 = s.next();
 		check(str1, str2);

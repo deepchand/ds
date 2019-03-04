@@ -8,6 +8,7 @@ public class AlienWordDictionary {
 	public static class Graph {
 		private final LinkedList<Integer>[] adjacencyList;
 
+		@SuppressWarnings("unchecked")
 		Graph(int nVertices) {
 			adjacencyList = new LinkedList[nVertices];
 			for (int vertexIndex = 0; vertexIndex < nVertices; vertexIndex++) {

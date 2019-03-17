@@ -1,8 +1,11 @@
 package graph;
 
-class Count {
-	int count;
-	Count(int count) {
-		this.count = count;
+public class Count {
+
+	public int count;
+
+	public Count(int i) {
+		this.count = i;
 	}
+
 }

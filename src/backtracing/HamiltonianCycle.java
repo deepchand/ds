@@ -16,7 +16,7 @@ public class HamiltonianCycle {
 		if (pos == mat.length) {
 			if (mat[pos - 1][0] == 1) {
 				for (int i = 0; i < path.length; i++)
-					System.out.print(path[i]+" ");
+					System.out.print(path[i] + " ");
 				System.out.println();
 			}
 		}

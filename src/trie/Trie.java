@@ -5,10 +5,10 @@ import java.util.Map;
 
 public class Trie {
 
-	public class TrieNode {
+	public static class TrieNode {
 
-		Map<Character, TrieNode> children;
-		boolean endOfWord;
+		public Map<Character, TrieNode> children;
+		public boolean endOfWord;
 
 		public TrieNode() {
 			super();
@@ -17,7 +17,7 @@ public class Trie {
 		}
 	}
 
-	private final TrieNode root;
+	public final TrieNode root;
 
 	public Trie() {
 		root = new TrieNode();
@@ -48,6 +48,20 @@ public class Trie {
 			curr = node;
 		}
 		return curr.endOfWord;
+	}
+
+	public boolean prefixSearch(String word) {
+
+		TrieNode curr = root;
+		for (int i = 0; i < word.length(); i++) {
+			Character c = word.charAt(i);
+			if (curr.children.containsKey(c)) {
+				curr = curr.children.get(c);
+			} else {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	public void deleteWord(String word) {
@@ -87,17 +101,13 @@ public class Trie {
 		}
 		return false;
 	}
-	
-	
+
 	public static void main(String[] args) {
 		String test = "abcd";
 		String test1 = "abgl";
 		Trie trie = new Trie();
 		trie.insert(test);
 		trie.insert(test1);
-		System.out.println(trie.wholeWordSearch(test1));
-		trie.deleteWord(test1);
-		System.out.println(trie.wholeWordSearch(test1));
-		System.out.println(trie.wholeWordSearch(test));
+		System.out.println(trie.prefixSearch("b"));
 	}
 }
